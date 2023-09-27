@@ -120,7 +120,7 @@ Ao longo do desafio você deve:
 
 1. Criar uma tabela a partir do CSV oferecido a você pelo time de vendas;
 
-    Faça o download do arquivo .CSV a seguir: <a href=''>***Link CSV***</a>
+O arquivo dentro da pasta **src** a seguir:![Arquivo CSV](./src/voos.csv)
 
 2. Limpar dados de para garantir que as datas funcionem e que caracteres especiais não atrapalhem análises nos campos de texto;
 
