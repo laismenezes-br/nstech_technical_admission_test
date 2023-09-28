@@ -1,4 +1,4 @@
-## **Bem vindo ao teste técnico da Nstech!**
+## **Bem vindo ao teste técnico da NSTech!**
 
 *******
 Tabelas de conteúdo 
@@ -90,7 +90,7 @@ Bem vindo ao teste técnico para admissão no Datalake da NSTech, esse desafio b
     <img src="./images/cluster_tela4.png" alt="Tela 4 - Criação Cluster Databricks Community">
     </figure>
 
-2. Criar Notebook para execução do desafio proposto e esportação do arquivo final:
+2. Criar Notebook para execução do desafio proposto e exportação do arquivo final:
 
     <div id='createnotebook'/>
 
@@ -105,7 +105,7 @@ Bem vindo ao teste técnico para admissão no Datalake da NSTech, esse desafio b
 
     ***Tela 2 - Salvar Notebook Databricks***
 
-    Ao fim da execução do desafio clique em **File** -> **Export** -> **IPython Notebook**, para exportar seu arquivo de teste (.ipython) e enviar para time de pessoas da NStech.  
+    Ao fim da execução do desafio clique em **File** -> **Export** -> **IPython Notebook**, para exportar seu arquivo de teste (.ipython) e enviar para time de pessoas da NSTech.  
     <figure>
     <img src="./images/notebook_tela2.png" alt="Tela 2 - Salvar Notebook Databricks Community">
     </figure>
@@ -114,23 +114,23 @@ Bem vindo ao teste técnico para admissão no Datalake da NSTech, esse desafio b
 
 ### Descrição do Desafio Técnico
 
-Você é analista de dados da Companhia Aérea NstechAir e precisa ajudar o time de fidelização da escolher onde serão feitas as próximas 5 salas VIP da companhia. Sua escolhe deve maximizar o a quantidade de passageiros atendidos e minimizar o desconforto dos passageiros afetados por atrasos.
+Você é analista de dados da Companhia Aérea NSTechAir e precisa ajudar o time de fidelização a escolher onde serão feitas as próximas 5 salas VIP da companhia. Sua escolha deve maximizar a quantidade de passageiros atendidos e minimizar o desconforto dos passageiros afetados por atrasos.
 
 Ao longo do desafio você deve:
 
 1. Criar uma tabela a partir do CSV oferecido a você pelo time de vendas;
 
-O arquivo dentro da pasta **src** a seguir:[Arquivo CSV](./src/voos.csv)
+    O arquivo dentro da pasta **src** a seguir: [Arquivo CSV](./src/voos.csv)
 
-2. Limpar dados de para garantir que as datas funcionem e que caracteres especiais não atrapalhem análises nos campos de texto;
+2. Limpar dados para garantir que as datas funcionem e que caracteres especiais não atrapalhem análises nos campos de texto;
 
 3. Criar dimensões ligadas aos países em que operamos, aeroportos que usamos, pilotos da companhia, status dos voos e datas dos voos;
 
-4. Realizar análises sobre os dados e emitir um parecer para o time de fidelidade sobre: "Em quais aeroportos cada sala deve ser construída e porquê?";
+4. Realizar análises sobre os dados e emitir um parecer para o time de fidelidade sobre: "Em quais aeroportos cada sala deve ser construída e por quê?";
 
 5. Realizar análises sobre os dados e emitir um parecer para o time de treinamentos se: "Há relação entre os atrasos e os pilotos?", para que haja algum treinamento específico;
 
-6. Ao final do desafio você precisa entregar ao time de pessoas da NStech um arquivo com seu notebook, análises e pareceres sobre cada um dos dois casos, detalhado em: ***[Criar e Salvar Notebook Databricks](#createnotebook)***
+6. Ao final do desafio você precisa entregar ao time de pessoas da NSTech um arquivo com seu notebook, análises e pareceres sobre cada um dos dois casos, detalhado em: ***[Criar e Salvar Notebook Databricks](#createnotebook)***
 
 <div id='contact'/>
 
