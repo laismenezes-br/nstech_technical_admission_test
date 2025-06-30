@@ -84,7 +84,7 @@ Ao longo do desafio você deve:
             1. fato_voos (dados tratados de voos);
             2. dim_paises (países em que operamos);
             3. dim_aeroportos (aeroportos em que operamos);
-            4. dim_pilottos (pilotos da companhia);
+            4. dim_pilotos (pilotos da companhia);
             5. dim_status_voos (status dos voos);
             6. dim_datas_voos (datas dos voos).
             
