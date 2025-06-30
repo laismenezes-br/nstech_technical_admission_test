@@ -88,7 +88,7 @@ Ao longo do desafio você deve:
             5. dim_status_voos (status dos voos);
             6. dim_datas_voos (datas dos voos).
             
-2. Realizar uma análise em notebook ([Analysis](./airflow/src/analysis/analise_voos.ipynb)) e emitir um parecer para as duas peguntas a seguir:
+2. Realizar uma análise em notebook ([Analysis](./airflow/src/analysis)) e emitir um parecer para as duas peguntas a seguir:
     
     * Em quais aeroportos cada sala deve ser construída e por quê?
     * Há relação entre os atrasos e os pilotos?
