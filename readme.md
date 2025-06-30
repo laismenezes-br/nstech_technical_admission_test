@@ -6,12 +6,6 @@ Tabelas de conteúdo
 
  2. [Passos para execução](#steps)
 
-    [Cadastro Databricks](#signup)
-
-    [Criação Cluster Databricks](#createcluster)
-
-    [Criar e Salvar Notebook Databricks](#createnotebook)
-
  3. [Descrição do Desafio Técnico](#description)
 
  4. [Contato](#contact)
@@ -21,119 +15,97 @@ Tabelas de conteúdo
 
 ### Sobre
 
-Bem vindo ao teste técnico para admissão no Datalake da NSTech, esse desafio busca avaliar seus conhecimentos em extração, manipulação e escrita de dados. Durante o teste você poderá usar Python (incluindo Pyspark) e SQL para resolver o case especificado. Inicialmente, traremos o passo a passo para o aplicante ter acesso ao ambiente de execução do teste. Desse modo, o próximo passo é a execução do Desafio Técnico, o qual tem uma seção detalhando as atividade que devem ser realizadas. 
+Bem-vindo ao teste técnico para admissão na vaga de Engenharia de Dados no Datalake da NSTech, esse desafio busca avaliar seus conhecimentos em orquestração, manipulação e análise de dados. Durante o teste você poderá usar Python (incluindo Pyspark) e SQL para resolver o case especificado. Inicialmente, traremos o passo a passo para o aplicante construir o ambiente de execução do teste. Desse modo, o próximo passo é a execução do Desafio Técnico, o qual tem uma seção detalhando as atividade que devem ser realizadas. 
 
 <div id='steps'/>
 
 ### Passos para execução
 
-1. Criar conta de acesso e cluster no Databricks Community:
+1. Instalação do Docker Engine:
 
-    <div id='signup'/>
+    Inicialmente, você precisa ter o Docker instalado. Certifique-se de que ele está devidamente instalado antes de prosseguir com o deploy do Airflow. O ícone redireciona você para a página oficial do Docker.
 
-    #### Cadastro Databricks
+    * [![Docker][Docker-logo]][Docker-url]
 
-    Acesse <a href='https://www.databricks.com/try-databricks#account'>***Databricks Community***</a> e siga os passos ilustrados.
+2. Deploy do Airflow:
 
-    ***Tela 1 - Cadastro Databricks***
+    Posteriormente, o aplicante precisa seguir o passo a passo de execução do docker compose referente ao Airflow 2.10.5 via terminal com os seguintes comandos : [Docker Compose](./airflow/docker-compose.yaml)
 
-    Preencha os seus dados cadastrais nos campos ilustrados.
-    <figure>
-    <img src="./images/cadastro_tela1.png" alt="Tela 1 - Cadastro Databricks Community">
-    </figure>
+    * Comando para inicializar o banco de dados do Airflow:
+    ```sh
+    docker compose -f airflow/docker-compose.yaml up airflow-init
+    ```
+    * Comando para inicializar os demais serviços do Airflow:
+    ```sh
+    docker compose -f airflow/docker-compose.yaml up -d
+    ```
+3. Validação de execução do ambiente:
+    * Comando para checar o funcionamento do ambiente Airflow 2.10.5:
 
-    ***Tela 2 - Cadastro Databricks***
+    ```sh
+    docker ps
+    ```
 
-    Na tela posterior selecione a opção circulada de vermelho, que define seu cadastro no Databricks Community.
-    <figure>
-    <img src="./images/cadastro_tela2.png" alt="Tela 2 - Cadastro Databricks Community">
-    </figure>
+    * Imagem de validação dos containers Airflow (status - healthy)
 
-    ***Tela 3 - Cadastro Databricks***
+    ![Figura_1](images/airflow-containers.png)
 
-    Acesse seu email cadastrado para confirmar sua conta e criar sua senha.
-    <figure>
-    <img src="./images/cadastro_tela3.png" alt="Tela 3 - Cadastro Databricks Community">
-    </figure>
+4. Acesso ao Airflow localmente:
+    
+    Acesse em um navegador de sua preferência o Airflow na url: [Airflow-url] - http://localhost:8080
 
-    <div id='createcluster'/>
+    Insira:
 
-    #### Criação Cluster Databricks
+        Username: airflow
+        
+        Password: airflow
 
-    Nesse momento, vamos ilustrar a crição do cluster no Databricks Community.
+    * Imagem de validação do login Airflow
 
-    ***Tela 1 - Criação Cluster Databricks***
+    ![Figura_2](images/airflow-login.png)
 
-    Clique no botão de **Compute**, destacado na imagem:
-    <figure>
-    <img src="./images/cluster_tela1.png" alt="Tela 1 - Criação Cluster Databricks Community">
-    </figure>
-
-    ***Tela 2 - Criação Cluster Databricks***
-
-    Na tela posterior clique em **Create compute**, destacado na imagem:
-    <figure>
-    <img src="./images/cluster_tela2.png" alt="Tela 2 - Criação Cluster Databricks Community">
-    </figure>
-
-    ***Tela 3 - Criação Cluster Databricks***
-
-    Na tela posterior preencha em **Compute name** e clique em **Create compute**, destacado na imagem:
-    <figure>
-    <img src="./images/cluster_tela3.png" alt="Tela 3 - Criação Cluster Databricks Community">
-    </figure>
-
-    ***Tela 4 - Criação Cluster Databricks***
-
-    Por fim, segue a imagem do cluster iniciado e pronto para uso.
-    <figure>
-    <img src="./images/cluster_tela4.png" alt="Tela 4 - Criação Cluster Databricks Community">
-    </figure>
-
-2. Criar Notebook para execução do desafio proposto e exportação do arquivo final:
-
-    <div id='createnotebook'/>
-
-    #### Criação Notebook Databricks
-
-    ***Tela 1 - Criação Notebook Databricks***
-
-    No botão de **Create** escolha a opção **Notebook**, assim você está apto para executar o desafio proposto aqui na seção ***[Descrição do Desafio Técnico](#description)***
-    <figure>
-    <img src="./images/notebook_tela1.png" alt="Tela 1 - Criação Notebook Databricks Community">
-    </figure>
-
-    ***Tela 2 - Salvar Notebook Databricks***
-
-    Ao fim da execução do desafio clique em **File** -> **Export** -> **IPython Notebook**, para exportar seu arquivo de teste (.ipython) e enviar para time de pessoas da NSTech.  
-    <figure>
-    <img src="./images/notebook_tela2.png" alt="Tela 2 - Salvar Notebook Databricks Community">
-    </figure>
 
 <div id='description'/>
 
 ### Descrição do Desafio Técnico
 
-Você é analista de dados da Companhia Aérea NSTechAir e precisa ajudar o time de fidelização a escolher onde serão feitas as próximas 5 salas VIP da companhia. Sua escolha deve maximizar a quantidade de passageiros atendidos e minimizar o desconforto dos passageiros afetados por atrasos.
+Você ocupa uma cadeira de dados da Companhia Aérea NSTechAir e precisa criar de um Esquema Estrela (Star Schema) e auxiliar o time de fidelização a escolher onde serão feitas as próximas 5 salas VIP da companhia. Sua escolha deve maximizar a quantidade de passageiros atendidos e minimizar o desconforto dos passageiros afetados por atrasos.
 
 Ao longo do desafio você deve:
 
-1. Criar uma tabela a partir do CSV oferecido a você pelo time de vendas;
+1. Criar uma DAG com duas tasks referenciadas abaixo:
 
-    O arquivo dentro da pasta **src** a seguir: [Arquivo CSV](./src/voos.csv)
+    * A task 1 será responsável pelo tratamento do dado no csv ([Arquivo CSV](./airflow/src/voos.csv)):
+        - Limpar campos de texto retirando caracteres especiais e fazendo upper case dos mesmos;
+        - Garantir que as datas funcionem como date no padrão: yyyy-mm-dd 
 
-2. Limpar dados para garantir que as datas funcionem e que caracteres especiais não atrapalhem análises nos campos de texto;
+    * A task 2 será responsável pela construção do Star Schema:
+        - Você deve criar 6 .csvs na pasta ([Results](./airflow/src/results)), definindo uma fato e 5 dimensões:
+            1. fato_voos (dados tratados de voos);
+            2. dim_paises (países em que operamos);
+            3. dim_aeroportos (aeroportos em que operamos);
+            4. dim_pilottos (pilotos da companhia);
+            5. dim_status_voos (status dos voos);
+            6. dim_datas_voos (datas dos voos).
+            
+2. Realizar uma análise em notebook ([Analysis](./airflow/analysis/analise_voos.ipynb)) e emitir um parecer para as duas peguntas a seguir:
+    
+    * Em quais aeroportos cada sala deve ser construída e por quê?
+    * Há relação entre os atrasos e os pilotos?
 
-3. Criar dimensões ligadas aos países em que operamos, aeroportos que usamos, pilotos da companhia, status dos voos e datas dos voos;
+    Obs.: a análise à cerca dos dados precisa ser explicíta em termos de código sql e o parecer final pode ser apresentado em um breve texto com as conclusões e sugestões.
 
-4. Realizar análises sobre os dados e emitir um parecer para o time de fidelidade sobre: "Em quais aeroportos cada sala deve ser construída e por quê?";
-
-5. Realizar análises sobre os dados e emitir um parecer para o time de treinamentos se: "Há relação entre os atrasos e os pilotos?", para que haja algum treinamento específico;
-
-6. Ao final do desafio você precisa entregar ao time de pessoas da NSTech um arquivo com seu notebook, análises e pareceres sobre cada um dos dois casos, detalhado em: ***[Criar e Salvar Notebook Databricks](#createnotebook)***
+3. No final do desafio você precisa entregar ao time de pessoas da NSTech:
+    * Um arquivo com a pasta results tendo seus 6 csvs do star schema e um print da DAG em funcionamento;
+    * Um arquivo com o notebook (analise_voos.ipynb) contendo suas análises e seu parecer à cerca dos dados.
 
 <div id='contact'/>
 
 ### Contato
 
-Em caso de dúvidas ou dificuldades, basta entrar em contato com a pessoa responsável pelo seu processo seletivo. Em caso de necessidade, algum membro do time de engenharia será alocado para te ajudar.
+Em caso de dúvidas ou dificuldades, basta entrar em contato com a pessoa responsável pelo seu processo seletivo. Em caso de necessidade, algum membro do time de Engenharia de Dados será alocado para te ajudar.
+
+<!-- MARKDOWN LINKS & IMAGES -->
+[Docker-logo]: https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white
+[Docker-url]: https://www.docker.com/
+[Airflow-url]: http://localhost:8080
